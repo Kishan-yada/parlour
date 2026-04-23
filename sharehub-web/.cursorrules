@@ -1,0 +1,49 @@
+PROJECT: ShareHub Nepal - NEPSE stock market website
+
+FRAMEWORK: Next.js 14 App Router + TypeScript strict mode
+
+STYLING: Tailwind CSS + shadcn/ui + Framer Motion
+
+DATABASE: Supabase (PostgreSQL + Auth + Realtime + Storage)
+
+CHARTS: TradingView Lightweight Charts v4
+
+STATE: Zustand (client) + TanStack Query v5 (server)
+
+AI: Python FastAPI on Railway
+
+PAYMENTS: eSewa v2 + Khalti v2
+
+NEPAL CONTEXT:
+
+- Currency: NPR (Rs) - never USD in UI
+- NEPSE hours: Sun-Thu 11 AM-3 PM NPT
+- Support Nepali (ne) and English (en)
+- Font: Google Fonts Outfit (headings) + JetBrains Mono (data)
+
+SECURITY:
+
+- All API routes validate JWT tokens
+- Rate limiting on auth endpoints
+- CSRF protection on state-changing requests
+- Content Security Policy headers
+- Never expose Supabase service role key client-side
+
+CODE STYLE:
+
+- Server Components by default, "use client" only when needed
+- No any types
+- Every async function has try/catch + error boundary
+- Every page has loading.tsx and error.tsx
+- Validate inputs with Zod before any API call
+
+FILE STRUCTURE:
+
+- src/app/ - pages (file-based routing)
+- src/components/ - reusable React components
+- src/components/ui/ - shadcn components
+- src/lib/ - Supabase client, utils
+- src/services/ - API service functions
+- src/stores/ - state stores
+- src/hooks/ - custom hooks
+- src/types/ - TypeScript types
